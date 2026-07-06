@@ -13,7 +13,8 @@ Programmer* (decoupling/DRY topics) and APoSD information hiding.
 
 Full principles: [../references/principles.md](../references/principles.md).
 Symptom catalog: [../references/red-flags.md](../references/red-flags.md).
-Vocabulary (module/interface/seam/depth): the `codebase-design` skill.
+Worked example: [../references/examples.md](../references/examples.md#designing-for-change).
+Vocabulary (module/interface/seam/depth): [../references/vocabulary.md](../references/vocabulary.md) (and the `codebase-design` skill for the full treatment).
 
 ## The master metric
 

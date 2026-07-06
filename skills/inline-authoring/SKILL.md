@@ -9,10 +9,13 @@ Write for the next reader. Code is read far more often than written, so optimize
 for ease of reading, not ease of writing. This is the moment-of-writing side of
 *A Philosophy of Software Design*: names, comments, consistency, obviousness.
 
-Vocabulary (module / interface / seam) is the `codebase-design` skill's;
-principles and the red-flags catalog are in
+Vocabulary (module / interface / seam):
+[../references/vocabulary.md](../references/vocabulary.md) (and the
+`codebase-design` skill for the full treatment); principles and the red-flags
+catalog are in
 [../references/principles.md](../references/principles.md) and
-[../references/red-flags.md](../references/red-flags.md).
+[../references/red-flags.md](../references/red-flags.md). Worked example:
+[../references/examples.md](../references/examples.md#inline-authoring).
 
 ## Naming (Ch 14; PP Topic 44)
 

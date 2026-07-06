@@ -1,0 +1,16 @@
+{
+  "name": "software-development-skills",
+  "owner": {
+    "name": "MKamel1",
+    "url": "https://github.com/MKamel1"
+  },
+  "description": "Software-design knowledge from three books, distilled into skills and a design-review agent team for Claude Code.",
+  "plugins": [
+    {
+      "name": "software-development-skills",
+      "source": "./",
+      "description": "Five design skills (design-process, module-design, designing-for-change, design-review, inline-authoring) plus a principal-design-reviewer agent team, distilled from A Philosophy of Software Design, The Pragmatic Programmer, and The Design of Design.",
+      "version": "1.0.0"
+    }
+  ]
+}

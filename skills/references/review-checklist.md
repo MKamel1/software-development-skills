@@ -10,7 +10,8 @@ the full treatment lives.
 - DoD = *The Design of Design* (Brooks)
 
 Symptom definitions: [red-flags.md](red-flags.md). Positive principles:
-[principles.md](principles.md). Vocabulary: the `codebase-design` skill.
+[principles.md](principles.md). Vocabulary: [vocabulary.md](vocabulary.md)
+(and the `codebase-design` skill for the full treatment).
 
 **Out of scope — defer, don't duplicate:** debugging technique, test-writing,
 TDD mechanics, git/CI → the superpowers skills own these. This rubric judges

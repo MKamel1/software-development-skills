@@ -1,5 +1,9 @@
 # Principal Design Reviewer Implementation Plan
 
+> **Superseded as of 2026-07-06** — see the banner in the companion spec
+> (`../specs/2026-07-05-principal-design-reviewer-design.md`) for what changed.
+> `agents/*.md` are the current source of truth.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a three-agent design-review team — a lead (`principal-design-reviewer`) that reviews pre-code planning artifacts using the five software-design skills, and can spawn two subagents (`design-specialist-reviewer`, `design-skeptic`) only when it judges that genuinely warranted.

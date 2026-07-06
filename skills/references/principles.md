@@ -2,7 +2,8 @@
 
 The shared conceptual layer for all three Philosophy-of-Software-Design skills.
 Distilled from APoSD. Vocabulary (module / interface / seam / depth / leverage /
-locality) lives in the `codebase-design` skill.
+locality): [vocabulary.md](vocabulary.md) (and the `codebase-design` skill for
+the full treatment).
 
 ## What we are fighting: complexity
 

@@ -5,8 +5,9 @@ From *A Philosophy of Software Design* (APoSD), distilled. When you see one,
 **stop and look for an alternate design that removes it** — don't rationalize it
 away. Each flag lists the fix and which skill acts on it.
 
-Vocabulary (module / interface / seam / depth / leverage / locality) is defined
-in the `codebase-design` skill; this catalog uses those terms.
+Vocabulary (module / interface / seam / depth / leverage / locality):
+[vocabulary.md](vocabulary.md) (and the `codebase-design` skill for the full
+treatment); this catalog uses those terms.
 
 | # | Red flag | You'll notice… | The fix | Acted on by |
 |---|----------|----------------|---------|-------------|

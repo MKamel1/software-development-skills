@@ -11,7 +11,8 @@ do; this one is about deciding what to do and how to proceed. Sources: Brooks'
 *The Design of Design* (Ch 1–16) and *The Pragmatic Programmer*'s design tips.
 
 Full principles: [../references/principles.md](../references/principles.md).
-Vocabulary: the `codebase-design` skill.
+Worked example: [../references/examples.md](../references/examples.md#design-process).
+Vocabulary: [../references/vocabulary.md](../references/vocabulary.md) (and the `codebase-design` skill for the full treatment).
 
 ## The core stance
 
