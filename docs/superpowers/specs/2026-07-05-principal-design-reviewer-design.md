@@ -1,5 +1,15 @@
 # Principal Design Reviewer — Team-of-Agents Design
 
+> **Superseded as of 2026-07-06.** This spec describes the original 3-agent
+> roster (lead + `design-specialist-reviewer` + a mid-review `design-skeptic`).
+> The shipped design since replaced the mid-review skeptic with a **post-verdict**
+> red-team (`review-skeptic` + `change-minimizer`, dispatched only after a
+> provisional verdict, to avoid anchoring their critique to the lead's framing)
+> and added an explicit provisional-verdict gate. `agents/principal-design-reviewer.md`,
+> `agents/review-skeptic.md`, and `agents/change-minimizer.md` are the current
+> source of truth; this file is kept as historical record of the original
+> rationale, not maintained against later changes.
+
 ## Purpose
 
 A senior-reviewer agent that evaluates a design/architecture/plan **before code

@@ -10,10 +10,13 @@ read or change it — not by whether it works. Working code isn't enough; the
 question is whether the design stays easy to change. This is the review side of
 *A Philosophy of Software Design*.
 
-Vocabulary (module / interface / seam / depth / leverage / locality) is the
-`codebase-design` skill's — use it exactly. The complexity frame and the
-principles live in [../references/principles.md](../references/principles.md);
+Vocabulary (module / interface / seam / depth / leverage / locality):
+[../references/vocabulary.md](../references/vocabulary.md) — the
+`codebase-design` skill covers it in more depth. Use these terms exactly. The
+complexity frame and the principles live in
+[../references/principles.md](../references/principles.md);
 the full symptom catalog is in [../references/red-flags.md](../references/red-flags.md).
+Worked example: [../references/examples.md](../references/examples.md#design-review).
 
 **For a thorough or reviewer-agent review, run the comprehensive rubric:**
 [../references/review-checklist.md](../references/review-checklist.md) — seven

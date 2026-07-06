@@ -1,0 +1,19 @@
+{
+  "name": "software-development-skills",
+  "version": "1.0.0",
+  "description": "Software-design knowledge from three books (A Philosophy of Software Design, The Pragmatic Programmer, The Design of Design), distilled into five design skills plus a design-review agent team.",
+  "author": {
+    "name": "MKamel1",
+    "url": "https://github.com/MKamel1"
+  },
+  "homepage": "https://github.com/MKamel1/software-development-skills",
+  "repository": "https://github.com/MKamel1/software-development-skills",
+  "keywords": [
+    "design",
+    "code-review",
+    "architecture",
+    "philosophy-of-software-design",
+    "pragmatic-programmer",
+    "design-of-design"
+  ]
+}

@@ -9,11 +9,14 @@ Design **deep modules**: a lot of capability behind a small interface. The best
 interface makes the common case trivial and hides complexity from every caller.
 This is the up-front-design side of *A Philosophy of Software Design*.
 
-Vocabulary (module / interface / seam / depth / leverage / locality) is the
-`codebase-design` skill's — and its DEEPENING.md / DESIGN-IT-TWICE.md cover
-dependency categories and the parallel-agent interface search. Don't redefine
-those here; use them. Principles and the error techniques are in
-[../references/principles.md](../references/principles.md).
+Vocabulary (module / interface / seam / depth / leverage / locality):
+[../references/vocabulary.md](../references/vocabulary.md) — the
+`codebase-design` skill covers the same terms in more depth, and its
+DEEPENING.md / DESIGN-IT-TWICE.md cover dependency categories and the
+parallel-agent interface search. Don't redefine those here; use them.
+Principles and the error techniques are in
+[../references/principles.md](../references/principles.md). Worked example:
+[../references/examples.md](../references/examples.md#module-design).
 
 ## The one working idea you need here
 

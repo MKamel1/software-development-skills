@@ -2,7 +2,7 @@
 
 Software-design knowledge, distilled into skills and an agent team for coding agents (built for [Claude Code](https://claude.com/claude-code), using its Skills and Subagents features).
 
-Three books — John Ousterhout's *A Philosophy of Software Design* (APoSD), Hunt & Thomas's *The Pragmatic Programmer* (PP), and Fred Brooks's *The Design of Design* (DoD) — distilled into principles an agent can actually apply, plus a senior review agent that applies them to your designs before you write code.
+Three books — John Ousterhout's *A Philosophy of Software Design* (APoSD), Andrew Hunt & David Thomas's *The Pragmatic Programmer* (PP), and Fred Brooks's *The Design of Design* (DoD) — distilled into principles an agent can actually apply, plus a senior review agent that applies them to your designs before you write code.
 
 Principles are paraphrased with chapter/topic citations; no book text is reproduced.
 
@@ -19,11 +19,14 @@ skills/
     red-flags.md            27 design-smell symptoms spanning all 3 books
     principles.md           Positive principles, unified under "Easier To Change"
     review-checklist.md     7-dimension rubric — the reviewer-agent's rubric
+    vocabulary.md           Module/interface/seam/depth/leverage/locality gloss
+    examples.md             One before→after worked example per skill
 
 agents/
-  principal-design-reviewer.md     Senior reviewer for pre-code planning artifacts
-  design-specialist-reviewer.md    Deep-dive persona it spawns when warranted
-  design-skeptic.md                Devil's-advocate + pessimist persona it spawns when warranted
+  principal-design-reviewer.md     Senior reviewer; forms a provisional verdict, then adjudicates
+  design-specialist-reviewer.md    Pre-verdict deep-dive persona, dispatched when warranted
+  review-skeptic.md                Post-verdict red-team: challenges a review that was too lenient
+  change-minimizer.md              Post-verdict red-team: challenges a fix list that over-prescribes change
 
 docs/superpowers/
   specs/    Design spec for the agent team
@@ -50,25 +53,23 @@ A separate, pre-existing skill called `codebase-design` supplies the shared voca
 
 - Reads the artifact you point it at, plus any `PRD.md`/`ARCHITECTURE.md`/`ROADMAP.md`/`CONTEXT.md` it finds nearby, on its own initiative
 - Applies the five skills above and runs `review-checklist.md`'s seven dimensions itself, by default
-- Spawns `design-specialist-reviewer` (a deep-dive persona) or `design-skeptic` (devil's-advocate + pessimist) **only when genuinely warranted** — not a fixed always-on panel
-- Resolves any disagreement itself, citing a specific red flag or principle first; only escalates to one capped rebuttal round for a genuine judgment call
-- Reports a verdict (`ready to build` / `needs revision`), findings by dimension, and a prioritized fix list — its own judgment, never a vote
+- May dispatch `design-specialist-reviewer` (a pre-verdict deep-dive persona) **only when genuinely warranted**, then forms a **provisional** verdict, findings, and fix list from its own pass
+- May then dispatch a post-verdict red-team — `review-skeptic` (challenges a verdict that was too lenient) and/or `change-minimizer` (challenges a fix list that over-prescribes change) — each reading the artifact and the provisional report independently, with no steering brief, so their challenge isn't anchored to how the principal framed it
+- Adjudicates every challenge in one round: accepts and revises, or rejects and justifies with a cited red flag or principle
+- Reports a **final** verdict (`ready to build` / `needs revision`), findings by dimension, a prioritized fix list, and how any challenges were resolved — its own judgment, never a vote
 
-See `docs/superpowers/specs/2026-07-05-principal-design-reviewer-design.md` for the full design rationale.
+See `docs/superpowers/specs/2026-07-05-principal-design-reviewer-design.md` for the original design rationale — that spec predates the post-verdict red-team described above; `agents/principal-design-reviewer.md` is the current source of truth for its behavior.
 
 ## Installing
 
-Skills and agents are plain files — Claude Code picks them up from `~/.claude/skills/` and `~/.claude/agents/`.
+This repo is a Claude Code plugin (`.claude-plugin/plugin.json` + `marketplace.json`) — skills and agents install and update together, with no manual copying or symlinking to keep in sync.
 
-```bash
-# Skills (copy — edit here, then re-copy to update)
-cp -r skills/* ~/.claude/skills/
-
-# Agents (symlink — edits here take effect immediately, no re-copy needed)
-ln -s "$(pwd)/agents/principal-design-reviewer.md" ~/.claude/agents/
-ln -s "$(pwd)/agents/design-specialist-reviewer.md" ~/.claude/agents/
-ln -s "$(pwd)/agents/design-skeptic.md" ~/.claude/agents/
 ```
+/plugin marketplace add MKamel1/software-development-skills
+/plugin install software-development-skills
+```
+
+Updating the plugin (`/plugin update` or a marketplace refresh) picks up any change to the skills or agents in this repo — there's no separate "re-copy to update" step. Your `~/.claude/CLAUDE.md` can still route agents to these skills by name; that routing is plugin-agnostic.
 
 ## Using it
 
@@ -79,7 +80,7 @@ ln -s "$(pwd)/agents/design-skeptic.md" ~/.claude/agents/
 > "Have the principal design reviewer look at this design doc before I start coding."
 > "Get a senior architecture review of ARCHITECTURE.md and PRD.md."
 
-It decides on its own whether to spawn either subagent — you never invoke those two directly.
+It decides on its own whether to dispatch any of the three subagents — you never invoke those directly.
 
 ## Scope
 
@@ -87,6 +88,4 @@ These skills judge **design quality** — they deliberately don't cover debuggin
 
 ## Sources
 
-- Ousterhout, John K. — *A Philosophy of Software Design* (2018/2019, Yaknyam Press)
-- Hunt, David & Thomas, Andrew — *The Pragmatic Programmer*, 20th Anniversary Edition (2020, Pearson)
-- Brooks, Frederick P. — *The Design of Design: Essays from a Computer Scientist* (2010, Addison-Wesley) — chapters 1–16 only; the house/hardware case studies and "great designers" chapters are out of scope for a coding agent.
+See `skills/DESIGN.md`'s Sources section for the full citations (edition, publisher, and scope notes) — this repo distills Ousterhout's *A Philosophy of Software Design*, Andrew Hunt & David Thomas's *The Pragmatic Programmer*, and Fred Brooks's *The Design of Design*.
