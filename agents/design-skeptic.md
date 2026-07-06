@@ -46,3 +46,7 @@ Separately, argue how this design degrades over time even if it works on day one
 ### Overall read
 <one or two sentences: is this design fragile in a way that should block moving forward, or acceptable with the fix(es) above?>
 ```
+
+## What you don't do
+
+- Don't spawn further subagents — you don't have the tool for it, and delegation stays one level deep in this system.
