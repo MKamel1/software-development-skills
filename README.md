@@ -1,10 +1,45 @@
 # Software Development Skills
 
-Software-design knowledge, distilled into skills and an agent team for coding agents (built for [Claude Code](https://claude.com/claude-code), using its Skills and Subagents features).
+A Claude Code plugin that puts three software-design books into an agent's hands: five skills that **trigger automatically** while you design, write, or review code, plus a **senior reviewer agent team** you can call on-demand to judge a design before code gets written.
 
-Three books — John Ousterhout's *A Philosophy of Software Design* (APoSD), Andrew Hunt & David Thomas's *The Pragmatic Programmer* (PP), and Fred Brooks's *The Design of Design* (DoD) — distilled into principles an agent can actually apply, plus a senior review agent that applies them to your designs before you write code.
+Three books — John Ousterhout's *A Philosophy of Software Design* (APoSD), Andrew Hunt & David Thomas's *The Pragmatic Programmer* (PP), and Fred Brooks's *The Design of Design* (DoD) — distilled into principles an agent can actually apply. Principles are paraphrased with chapter/topic citations; no book text is reproduced.
 
-Principles are paraphrased with chapter/topic citations; no book text is reproduced.
+## Installing
+
+This repo is a [Claude Code plugin](https://claude.com/claude-code) (`.claude-plugin/plugin.json` + `marketplace.json`) — skills and agents install and update together, with no manual copying or symlinking to keep in sync.
+
+```
+/plugin marketplace add MKamel1/software-development-skills
+/plugin install software-development-skills
+```
+
+Restart Claude Code (or reopen `/plugin`) to pick up the new skills and agents. Check `/plugin list` — you should see `software-development-skills` with 5 skills and 4 agents. Update it later with `/plugin update software-development-skills`, or a marketplace refresh; either picks up any change to this repo automatically, with no separate "re-copy" step. Your `~/.claude/CLAUDE.md` can still route agents to these skills by name — that routing is plugin-agnostic.
+
+**Developing locally:** to test edits before pushing, point the marketplace at your working copy instead of GitHub:
+
+```
+/plugin marketplace add /path/to/software-development-skills
+/plugin install software-development-skills
+```
+
+## Triggering it
+
+**The five skills trigger automatically** — there's no slash command and nothing to invoke by name. Claude Code matches what you're doing against each skill's description and loads the matching one on its own. Say what you're actually trying to do, in your own words:
+
+| Say something like… | Triggers |
+|---|---|
+| "I have a rough idea for X, help me figure out how to approach building it" | `design-process` |
+| "Design the interface for this `OrderRepository` class" | `module-design` |
+| "This module and that one keep changing together, how do I decouple them?" | `designing-for-change` |
+| "Review this diff / is this PR well-designed?" | `design-review` |
+| "What should I name this variable / is this comment adding anything?" | `inline-authoring` |
+
+**The reviewer agent is on-demand only** — ask for it by name, naturally, before code-writing starts:
+
+> "Have the principal design reviewer look at this design doc before I start coding."
+> "Get a senior architecture review of ARCHITECTURE.md and PRD.md."
+
+`principal-design-reviewer` decides on its own whether to dispatch any of its three subagents (`design-specialist-reviewer`, `review-skeptic`, `change-minimizer`) — you never invoke those directly, and there's no separate command to trigger them.
 
 ## What's in this repo
 
@@ -59,28 +94,6 @@ A separate, pre-existing skill called `codebase-design` supplies the shared voca
 - Reports a **final** verdict (`ready to build` / `needs revision`), findings by dimension, a prioritized fix list, and how any challenges were resolved — its own judgment, never a vote
 
 See `docs/superpowers/specs/2026-07-05-principal-design-reviewer-design.md` for the original design rationale — that spec predates the post-verdict red-team described above; `agents/principal-design-reviewer.md` is the current source of truth for its behavior.
-
-## Installing
-
-This repo is a Claude Code plugin (`.claude-plugin/plugin.json` + `marketplace.json`) — skills and agents install and update together, with no manual copying or symlinking to keep in sync.
-
-```
-/plugin marketplace add MKamel1/software-development-skills
-/plugin install software-development-skills
-```
-
-Updating the plugin (`/plugin update` or a marketplace refresh) picks up any change to the skills or agents in this repo — there's no separate "re-copy to update" step. Your `~/.claude/CLAUDE.md` can still route agents to these skills by name; that routing is plugin-agnostic.
-
-## Using it
-
-**Skills** trigger automatically based on what you're doing — no command needed. Mention designing a module, reviewing a diff, or naming something, and the relevant skill loads itself.
-
-**The reviewer agent** is on-demand only — ask for it naturally:
-
-> "Have the principal design reviewer look at this design doc before I start coding."
-> "Get a senior architecture review of ARCHITECTURE.md and PRD.md."
-
-It decides on its own whether to dispatch any of the three subagents — you never invoke those directly.
 
 ## Scope
 
