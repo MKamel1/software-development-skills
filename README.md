@@ -1,6 +1,6 @@
 # Software Development Skills
 
-A Claude Code plugin that puts three software-design books into an agent's hands: five skills that **trigger automatically** while you design, write, or review code, plus a **senior reviewer agent team** you can call on-demand to judge a design before code gets written.
+A Claude Code plugin that puts three software-design books into an agent's hands: five design skills plus two review/audit skills that **trigger automatically** while you design, write, or review code, plus a **senior reviewer agent team** you can call on-demand to judge a design before code gets written.
 
 Three books — John Ousterhout's *A Philosophy of Software Design* (APoSD), Andrew Hunt & David Thomas's *The Pragmatic Programmer* (PP), and Fred Brooks's *The Design of Design* (DoD) — distilled into principles an agent can actually apply. Principles are paraphrased with chapter/topic citations; no book text is reproduced.
 
@@ -33,6 +33,8 @@ Restart Claude Code (or reopen `/plugin`) to pick up the new skills and agents. 
 | "This module and that one keep changing together, how do I decouple them?" | `designing-for-change` |
 | "Review this diff / is this PR well-designed?" | `design-review` |
 | "What should I name this variable / is this comment adding anything?" | `inline-authoring` |
+| "Audit this whole repo's architecture / where's the tech debt concentrated?" | `codebase-audit` |
+| "Is this AI's code review any good / did it miss anything or hallucinate findings?" | `meta-code-review` |
 
 **The reviewer agent is on-demand only** — ask for it by name, naturally, before code-writing starts:
 
@@ -50,6 +52,8 @@ skills/
   designing-for-change/     Coupling, duplication, reversibility across modules
   design-review/            Evaluating existing code/diffs/PRs for design quality
   inline-authoring/         Naming, comments, consistency while writing code
+  codebase-audit/           Repo-scale as-built architecture review (hotspot-first)
+  meta-code-review/         Judging a code review's soundness (AI- or human-produced)
   references/
     red-flags.md            Design-smell symptom catalog spanning all 3 books
     principles.md           Positive principles, unified under "Easier To Change"
@@ -84,6 +88,15 @@ Keyed to **what you're doing**, not to which book an idea came from — this is 
 | `inline-authoring` | Writing code right now (names, comments) | APoSD Ch 12–18, PP naming |
 
 The shared vocabulary (module/interface/seam/depth/leverage/locality) and the deepening/design-it-twice procedures these five build on live in `skills/references/` (`vocabulary.md`, `deepening.md`, `design-it-twice.md`), so the plugin is self-contained. A separate skill called `codebase-design` covers the same ground in more depth; if you have it installed the skills here link to it as optional enrichment, but nothing in this repo requires it.
+
+## The two review/audit skills
+
+Where `design-review` judges a single diff or module, these two review at the scales that leaves open — a whole repository, and a review itself. Both apply the same design rubric and calibrate to work produced by **weak/small AI agents, strong/big AI agents, or junior developers**, whose failure profiles differ.
+
+| Skill | Use when | Draws mainly on |
+|---|---|---|
+| `codebase-audit` | Reviewing a whole repo/subsystem's architecture as-built | APoSD + churn×complexity hotspot analysis (Tornhill), dependency/layering metrics |
+| `meta-code-review` | Judging whether a code review (AI- or human-produced) is trustworthy | AI-code failure-mode research + Google's code-review standard, over the repo's design rubric |
 
 ## The agent team
 

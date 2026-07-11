@@ -20,13 +20,22 @@ The canonical source list for this repo — `README.md` and
   the house/hardware case studies and "great designers" management chapters
   are out of scope for a coding agent.
 
-## The five skills
+## The skills
 
 Keyed to **what the agent is doing** (reliable triggering), not to which book an
-idea came from. See `README.md`'s "The five skills" table for the full
-skill-by-skill breakdown. The shared vocabulary and the deepening/design-it-twice
-procedures the skills build on are absorbed locally into `references/`
-(`vocabulary.md`, `deepening.md`, `design-it-twice.md`); the separate
+idea came from. Two families:
+
+- **Five design skills** — `design-process`, `module-design`,
+  `designing-for-change`, `design-review`, `inline-authoring`.
+- **Two review/audit skills** — `codebase-audit` (repo-scale as-built review,
+  hotspot-first) and `meta-code-review` (judging a review's soundness, calibrated
+  to weak-AI / strong-AI / junior-developer producers). Both apply the same design
+  rubric as `design-review` at the scales it doesn't cover, and are grounded in the
+  research captured under `docs/design/`.
+
+See `README.md`'s skill tables for the full breakdown. The shared vocabulary and the
+deepening/design-it-twice procedures the skills build on are absorbed locally into
+`references/` (`vocabulary.md`, `deepening.md`, `design-it-twice.md`); the separate
 `codebase-design` skill, if installed, covers the same ground in more depth as
 optional enrichment.
 
