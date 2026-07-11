@@ -20,6 +20,20 @@ The canonical source list for this repo — `README.md` and
   the house/hardware case studies and "great designers" management chapters
   are out of scope for a coding agent.
 
+Additional primary sources distilled into the **review/audit** skills' reference
+files (paraphrased with chapter citations, no reproduced text; provenance and
+per-book influence recorded in `docs/design/`):
+
+- **Tornhill** — *Software Design X-Rays* (2018) & *Your Code as a Crime Scene* 2nd
+  ed. (2024, Pragmatic Bookshelf) → `codebase-audit/references/behavioral-analysis.md`.
+- **Ford, Parsons & Kua** — *Building Evolutionary Architectures* (2017, O'Reilly)
+  → `codebase-audit/references/fitness-functions.md`.
+- **Giordani** — *Clean Architectures in Python* (2nd ed., 2023)
+  → `codebase-audit/references/dependency-layering.md`.
+- **Feathers** — *Working Effectively with Legacy Code* (2004, Prentice Hall)
+  → `references/seams.md` (shared).
+- **APoSD 2nd ed.** — Ousterhout → `meta-code-review/references/ai-authored-code.md`.
+
 ## The skills
 
 Keyed to **what the agent is doing** (reliable triggering), not to which book an

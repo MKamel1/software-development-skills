@@ -45,6 +45,10 @@ whether a seam belongs at its external interface at all.
   seam at its interface. Don't expose an internal seam through the interface just
   because tests use it.
 
+For the primary-source treatment of seam *types* (object / link / preprocessing),
+sensing vs. separation, and the dependency-breaking techniques that introduce a seam,
+see [seams.md](seams.md) (Feathers).
+
 ## Testing strategy: replace, don't layer
 
 - Old unit tests on the shallow modules become waste once tests exist at the

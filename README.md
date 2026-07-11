@@ -53,7 +53,9 @@ skills/
   design-review/            Evaluating existing code/diffs/PRs for design quality
   inline-authoring/         Naming, comments, consistency while writing code
   codebase-audit/           Repo-scale as-built architecture review (hotspot-first)
+    references/             behavioral-analysis, metrics, dependency-layering, fitness-functions
   meta-code-review/         Judging a code review's soundness (AI- or human-produced)
+    references/             failure-modes, ai-authored-code
   references/
     red-flags.md            Design-smell symptom catalog spanning all 3 books
     principles.md           Positive principles, unified under "Easier To Change"
@@ -61,6 +63,7 @@ skills/
     vocabulary.md           Module/interface/seam/depth/leverage/locality gloss
     deepening.md            Dependency categories + seam/adapter procedure
     design-it-twice.md      Parallel-interface search (serial + sub-agent forms)
+    seams.md                Seam types + characterization tests (Feathers)
     examples.md             One before→after worked example per skill
 
 agents/

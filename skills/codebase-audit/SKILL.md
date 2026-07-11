@@ -11,16 +11,28 @@ gap that `design-review` (diff/module scope) and `principal-design-reviewer`
 an architectural narrative that leads with **where complexity is costing the most
 to change**, judged by the same design lens as the rest of this repo.
 
-Executable metric commands: [references/metrics.md](references/metrics.md). Design
-vocabulary and rubric come from the `design-review` skill's
+References for this skill:
+- [references/metrics.md](references/metrics.md) — runnable git/grep commands.
+- [references/behavioral-analysis.md](references/behavioral-analysis.md) — hotspot /
+  change-coupling / complexity-trend methods and thresholds (Tornhill).
+- [references/dependency-layering.md](references/dependency-layering.md) — dependency-rule
+  and layering-violation detection (Giordani).
+- [references/fitness-functions.md](references/fitness-functions.md) — turning findings
+  into repeatable CI guardrails (Ford/Parsons/Kua).
+- [../references/seams.md](../references/seams.md) — characterization tests: how to
+  *safely change* a hotspot once found (Feathers).
+
+Design vocabulary and rubric come from the `design-review` skill's
 `references/vocabulary.md`, `references/red-flags.md`, and
 `references/review-checklist.md` — invoke `design-review` to load them (its base
 directory is shown on load; cite relative to that, not by bare path).
 
 ## Procedure
 
-Run top to bottom. Steps 0–6 are cheap and git/grep-based (see
-[references/metrics.md](references/metrics.md)); don't skip the baseline.
+Run top to bottom. Steps 0–6 are cheap and git/grep-based — commands in
+[references/metrics.md](references/metrics.md), methods and thresholds in
+[references/behavioral-analysis.md](references/behavioral-analysis.md); don't skip
+the baseline.
 
 0. **Scope & baseline.** Repo age, contributor count (bus factor), languages,
    size. A two-week AI-agent scaffold and a five-year legacy system get different
@@ -40,15 +52,22 @@ Run top to bottom. Steps 0–6 are cheap and git/grep-based (see
    import/call relationship — hidden temporal coupling. Flag pairs that cross a
    module or layer boundary; that's an architecture smell, not a nit.
 6. **Dependency & layering.** Build a lightweight import graph. Detect cycles,
-   layer-direction violations (lower layer importing higher), and instability
-   outliers — a depended-upon module that itself depends on volatile ones is
-   fragile (formula and thresholds in [references/metrics.md](references/metrics.md)).
-   If intended layers are undocumented (common in AI-built repos), state them as a
-   hypothesis and flag violations against it.
+   layer-direction violations (inner/lower layer importing outer/higher), and
+   instability outliers — a depended-upon module that itself depends on volatile ones
+   is fragile (formula in [references/metrics.md](references/metrics.md); what counts
+   as a violation, and the correct/legitimate directions, in
+   [references/dependency-layering.md](references/dependency-layering.md)). If intended
+   layers are undocumented (common in AI-built repos), state them as a hypothesis and
+   flag violations against it.
 7. **Judge hotspots by dimension.** For each hotspot/finding, apply the
    `design-review` rubric — is it a *Shallow Module*, *Information Leakage*,
    *Temporal Decomposition*, a DRY violation? Run the module's **deletion test**.
    Report the design cause, not just the metric.
+8. **Recommend guardrails, not just fixes.** For each confirmed *structural* finding
+   (a cycle, a layering violation, an unbounded complexity/coupling ceiling), name the
+   **fitness function** that would keep it from regressing once fixed — an atomic CI
+   check ([references/fitness-functions.md](references/fitness-functions.md)). Reserve
+   this for design-shaping findings, not every nit.
 
 ## Calibrate to who built it
 

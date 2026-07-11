@@ -52,9 +52,13 @@ For each commit touching ≥2 files, tally file-pair co-occurrences:
 git log --name-only --pretty=format:"--%H--" --since="12 months ago"
 ```
 Group filenames between `--HASH--` markers, count pairs. Report a pair when
-`shared_commits ÷ avg(total_commits_each) ≥ 0.30` and each file has ≥5 revisions
-(code-maat's defaults). Flag pairs whose files live in different modules/layers.
-O(n²) in pairs — restrict to a recency window and/or the top-churn files first.
+`shared_commits ÷ avg(total_commits_each) ≥ threshold` and each file clears a minimum
+revision count. Thresholds differ by source — code-maat defaults are `min-revs 5`,
+`min-coupling 30%`; Tornhill's *Software Design X-Rays* argues a stricter ~20-commit /
+50% bar for reporting (see [behavioral-analysis.md](behavioral-analysis.md) for the
+trade-off and the "sum of coupling" ranking). Pick a bar and state it. Flag pairs whose
+files live in different modules/layers. O(n²) in pairs — restrict to a recency window
+and/or the top-churn files first.
 
 ## 6. Dependency & layering
 - **Import graph** (grep fallback): per file, `fan-out` = count of `import`/`require`/

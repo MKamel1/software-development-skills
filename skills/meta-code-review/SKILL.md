@@ -21,15 +21,20 @@ cite relative to that, not by bare path). Failure-mode taxonomy by producer:
 
 AI code fails differently by capability, and juniors differently again. Identify
 who produced the **code** and who produced the **review** (if unknown, hedge toward
-the union). This decides where you spend verification budget — see
-[references/failure-modes.md](references/failure-modes.md):
+the union). This decides where you spend verification budget — the mechanical failure
+taxonomy is in [references/failure-modes.md](references/failure-modes.md), and the
+design-*judgment* lens (why strong-AI failures are taste failures, not bug failures)
+is in [references/ai-authored-code.md](references/ai-authored-code.md):
 
 - **weak/small AI** → verify facts mechanically: resolve every import/package/API,
   re-run/trace execution, check numeric and boundary logic. Hallucination and
   fabrication dominate; assume low self-consistency.
 - **strong/frontier AI** → verify *logic* and *intent*: trace real execution paths,
   check spec-intent (not just letter), and challenge whether each abstraction is
-  necessary. Code looks production-quality even when subtly wrong.
+  necessary. Code looks production-quality even when subtly wrong — its likely defects
+  are design-taste failures (over-specialization, over-decomposition, over-exposure),
+  so a bug-free review is not automatically a clean one
+  ([references/ai-authored-code.md](references/ai-authored-code.md)).
 - **junior developer** → verify edge cases, error handling, testing discipline, and
   architecture; **mentor** rather than nitpick style, and credit genuine fresh-eyes
   catches. They rarely hallucinate APIs.

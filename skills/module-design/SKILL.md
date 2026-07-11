@@ -57,9 +57,10 @@ The seam location is its own decision, separate from what sits behind it. Base
 it on **information hiding**, not execution order — boundaries drawn around the
 *sequence* of operations (read → process → write) are *Temporal Decomposition*.
 For seam + dependency handling (in-process, local-substitutable, ports &
-adapters, mock), see [../references/deepening.md](../references/deepening.md)
-(and `codebase-design` for more depth if it's installed). Rule of thumb: **one
-adapter is a hypothetical seam; two is a real one** — don't add a port for a
+adapters, mock), see [../references/deepening.md](../references/deepening.md); for
+seam *types* and the enabling-point idea see [../references/seams.md](../references/seams.md)
+(Feathers) — and `codebase-design` for more depth if it's installed. Rule of thumb:
+**one adapter is a hypothetical seam; two is a real one** — don't add a port for a
 single implementation.
 
 ## Handle errors by removing them (Ch 10)
