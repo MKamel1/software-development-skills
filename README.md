@@ -39,7 +39,7 @@ Restart Claude Code (or reopen `/plugin`) to pick up the new skills and agents. 
 > "Have the principal design reviewer look at this design doc before I start coding."
 > "Get a senior architecture review of ARCHITECTURE.md and PRD.md."
 
-`principal-design-reviewer` decides on its own whether to dispatch any of its three subagents (`design-specialist-reviewer`, `review-skeptic`, `change-minimizer`) — you never invoke those directly, and there's no separate command to trigger them.
+`principal-design-reviewer` decides on its own whether to dispatch any of its subagents (`design-specialist-reviewer`, and the post-verdict red-team `blind-skeptic` → `review-challenger` and `change-minimizer`) — you never invoke those directly, and there's no separate command to trigger them.
 
 ## What's in this repo
 
@@ -60,7 +60,8 @@ skills/
 agents/
   principal-design-reviewer.md     Senior reviewer; forms a provisional verdict, then adjudicates
   design-specialist-reviewer.md    Pre-verdict deep-dive persona, dispatched when warranted
-  review-skeptic.md                Post-verdict red-team: challenges a review that was too lenient
+  blind-skeptic.md                 Post-verdict red-team: independent, review-free read of the artifact
+  review-challenger.md             Post-verdict red-team: challenges the review using the blind read
   change-minimizer.md              Post-verdict red-team: challenges a fix list that over-prescribes change
 
 docs/superpowers/
@@ -89,7 +90,7 @@ A separate, pre-existing skill called `codebase-design` supplies the shared voca
 - Reads the artifact you point it at, plus any `PRD.md`/`ARCHITECTURE.md`/`ROADMAP.md`/`CONTEXT.md` it finds nearby, on its own initiative
 - Applies the five skills above and runs `review-checklist.md`'s seven dimensions itself, by default
 - May dispatch `design-specialist-reviewer` (a pre-verdict deep-dive persona) **only when genuinely warranted**, then forms a **provisional** verdict, findings, and fix list from its own pass
-- May then dispatch a post-verdict red-team — `review-skeptic` (challenges a verdict that was too lenient) and/or `change-minimizer` (challenges a fix list that over-prescribes change) — each reading the artifact and the provisional report independently, with no steering brief, so their challenge isn't anchored to how the principal framed it
+- May then dispatch a post-verdict red-team: the skeptic pair — `blind-skeptic` reads the artifact **without** the review (an unanchored read), then `review-challenger` uses that read plus the provisional report to challenge a verdict that was too lenient — and/or `change-minimizer` (challenges a fix list that over-prescribes change). Splitting the skeptic in two is what keeps the read independent: a subagent sees its dispatch prompt first, so the only way to read unanchored is to never be handed the review
 - Adjudicates every challenge in one round: accepts and revises, or rejects and justifies with a cited red flag or principle
 - Reports a **final** verdict (`ready to build` / `needs revision`), findings by dimension, a prioritized fix list, and how any challenges were resolved — its own judgment, never a vote
 
