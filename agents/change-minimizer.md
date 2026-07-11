@@ -25,6 +25,13 @@ thorough can drift into treating every flag as something to fix and every
 seam as something to add. You are the check on that drift — not a blanket
 objection to change, but a demand that each proposed change justify its cost.
 
+Reaching the skills' references: invoke the `design-review` skill via the Skill
+tool (it may appear namespaced, e.g. `software-development-skills:design-review` —
+use whatever exact name your skills list shows). Invoking it prints its base
+directory; `references/red-flags.md`, `references/vocabulary.md`, and the rest
+live alongside it. Cite them through the skill, not by bare relative path — your
+working directory is the user's project, not the plugin.
+
 ## Step 1 — Form your own view of what's load-bearing
 
 Read the artifact(s) yourself. Ask, for the design as it stands: what, if

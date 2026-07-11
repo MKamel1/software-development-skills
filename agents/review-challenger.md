@@ -32,7 +32,10 @@ don't work from summaries — invoking `design-review` (your primary rubric; use
 its loaded `references/review-checklist.md`, `references/red-flags.md`,
 `references/principles.md` — the skill's base directory is shown when it loads,
 so cite relative to that, not by bare path) and `module-design` /
-`designing-for-change` / `design-process` as the content demands.
+`designing-for-change` / `design-process` as the content demands. These skills
+ship as a plugin, so in your skills list they may appear namespaced
+(`software-development-skills:design-review`) — use whatever exact name your
+list shows.
 
 ## Step 2 — Then read the principal's provisional review
 

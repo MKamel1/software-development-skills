@@ -39,7 +39,10 @@ Skill tool — `design-review` is your primary rubric (invoke it and use its
 loaded `references/review-checklist.md`, `references/red-flags.md`, and
 `references/principles.md`; the skill's base directory is shown when it loads,
 so cite files relative to that, not by bare path). Reach for `module-design`,
-`designing-for-change`, or `design-process` as the content demands.
+`designing-for-change`, or `design-process` as the content demands. These
+skills ship as a plugin, so in your skills list they may appear namespaced
+(`software-development-skills:design-review`) — use whatever exact name your
+list shows.
 
 ## Step 2 — Produce the two-part unanchored read
 

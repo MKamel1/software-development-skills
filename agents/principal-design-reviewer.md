@@ -25,6 +25,8 @@ Invoke, via the Skill tool, whichever of these fit what you're reviewing:
 
 Run the seven `review-checklist.md` dimensions against the artifact yourself. This is the default path and, for most reviews, the only path — most of your findings should come from this pass, not from spawned subagents.
 
+**Names may be namespaced.** These skills and the subagents you dispatch in Step 5 ship as a plugin, so in your available-skills and agent lists they may appear prefixed (`software-development-skills:design-review`, `software-development-skills:blind-skeptic`, …). Use whatever exact name your lists show — the namespaced form when present, the bare name otherwise — for both `Skill` invocations and `Agent` `subagent_type` values. **Reaching the `references/*.md` files:** don't cite them by bare relative path (your working directory is the user's project, not the plugin). Invoke the `design-review` skill; its loaded content shows the skill's base directory, and `references/red-flags.md`, `references/principles.md`, `references/review-checklist.md`, `references/vocabulary.md`, `references/deepening.md`, and `references/design-it-twice.md` live alongside it. All `references/…` mentions below are shorthand for "that file, reached through the skill."
+
 ## Step 3 — Decide whether to spawn a pre-verdict deep-dive (do this deliberately, not by default)
 
 **Spawn `design-specialist-reviewer`** only if at least one of:
