@@ -2,11 +2,11 @@
 
 The taxonomy `meta-code-review` routes on. Each mode lists who it's worst in and a
 cheap detection heuristic. Sources: package-hallucination study (Spracklen et al.,
-USENIX Security 2025), Copilot security studies (Pearce et al., IEEE S&P 2022;
-arXiv:2310.02059), AI-vs-human PR analysis (CodeRabbit), SWE-agent failure
-taxonomies, and code-hallucination surveys (arXiv:2511.00776, 2512.05239). Figures
-are directional industry signal, not ground truth — verify before citing exact
-numbers.
+USENIX Security 2025); Copilot security studies (Pearce et al., "Asleep at the
+Keyboard," IEEE S&P 2022; and the separate real-world study arXiv:2310.02059);
+AI-vs-human PR analysis (CodeRabbit); SWE-agent failure taxonomies; and
+code-hallucination surveys (arXiv:2511.00776, arXiv:2512.05239). Figures are
+directional industry signal, not ground truth — verify before citing exact numbers.
 
 | Failure mode | Worst in | Cheap detection |
 |---|---|---|

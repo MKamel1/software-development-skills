@@ -1,6 +1,6 @@
 ---
 name: codebase-audit
-description: Use when reviewing an existing repository's architecture as-built — auditing a whole codebase or large subsystem (not a single diff or module) for design quality, finding hotspots, dependency cycles, layering violations, and where complexity is actually costing maintenance. Applies to code written by AI agents or humans. Reports by design-quality dimension, hotspot-first.
+description: Use when reviewing an existing repository's architecture as-built — auditing a whole codebase or large subsystem (not a single diff or module) for design quality: hotspots, dependency cycles, layering violations, and where complexity is actually costing maintenance. Works on code written by weak or strong AI agents or by developers. Applies the design-review rubric plus churn×complexity hotspot analysis (Tornhill) and dependency/instability metrics (Martin).
 ---
 
 # Codebase Audit
@@ -16,14 +16,6 @@ vocabulary and rubric come from the `design-review` skill's
 `references/vocabulary.md`, `references/red-flags.md`, and
 `references/review-checklist.md` — invoke `design-review` to load them (its base
 directory is shown on load; cite relative to that, not by bare path).
-
-## When to use vs siblings
-
-- Whole repo / large subsystem, code already written → **here**.
-- A single diff, PR, or module → **design-review**.
-- A pre-code design doc, spec, or plan → **principal-design-reviewer** agent.
-- You found a module that needs redesigning → hand the specific module to
-  **module-design**; coupling/duplication across modules → **designing-for-change**.
 
 ## Procedure
 
@@ -41,20 +33,37 @@ Run top to bottom. Steps 0–6 are cheap and git/grep-based (see
 3. **Complexity proxy.** LOC per file (cheap, what CodeScene itself uses), or a
    grep decision-point count, or `scc` if available. A ranking signal, not a score.
 4. **Hotspots = churn × complexity.** Lead with the intersection: files both
-   frequently changed and complex. This is the ~1–2% of the codebase that drives
-   most maintenance cost — the report's headline.
+   frequently changed and complex — Tornhill's finding is that a small fraction of
+   a codebase (often ~1–2%) drives most maintenance cost, so this is the report's
+   headline. Treat it as a prioritization heuristic, not a guarantee for this repo.
 5. **Change coupling.** Files that change together in the same commits but have no
    import/call relationship — hidden temporal coupling. Flag pairs that cross a
    module or layer boundary; that's an architecture smell, not a nit.
 6. **Dependency & layering.** Build a lightweight import graph. Detect cycles,
    layer-direction violations (lower layer importing higher), and instability
-   `I = Ce/(Ce+Ca)` outliers — a depended-upon module that itself depends on
-   volatile ones is fragile. If intended layers are undocumented (common in
-   AI-built repos), state them as a hypothesis and flag violations against it.
+   outliers — a depended-upon module that itself depends on volatile ones is
+   fragile (formula and thresholds in [references/metrics.md](references/metrics.md)).
+   If intended layers are undocumented (common in AI-built repos), state them as a
+   hypothesis and flag violations against it.
 7. **Judge hotspots by dimension.** For each hotspot/finding, apply the
    `design-review` rubric — is it a *Shallow Module*, *Information Leakage*,
    *Temporal Decomposition*, a DRY violation? Run the module's **deletion test**.
    Report the design cause, not just the metric.
+
+## Calibrate to who built it
+
+The audit is producer-agnostic in method, but what you *expect* to find differs —
+name the producer from the Step 0 baseline and adjust:
+
+- **Weak/small AI scaffold** — often no intended architecture yet: everything
+  imports everything, no layering to violate. The honest finding is "no boundaries
+  exist," not a list of violations. Expect fabricated or dead scaffolding.
+- **Strong/big AI codebase** — structure looks plausible and idiomatic, so verify
+  boundaries actually *hold* (trace the imports/seams) rather than trusting
+  appearance; watch for over-engineering — abstractions and layers with a single
+  implementation — at scale.
+- **Human / legacy** — weigh debt against churn, age, and team history; hotspots
+  here are real, accumulated cost, and the git signal is richest.
 
 ## Prioritize hotspot-first (don't drown the report in nits)
 
@@ -65,9 +74,10 @@ Run top to bottom. Steps 0–6 are cheap and git/grep-based (see
 3. **Isolated complexity/size outliers** (complex but stable) — mention, low priority.
 4. **Style/naming/nits** — only if asked, and batched, never itemized per file.
 
-For a repo too large for one context window, dispatch one Sonnet subagent per
-module (each capped in output), then dedupe and synthesize — don't force the whole
-tree through one pass.
+For a repo too large for one context window — and only if you have the Agent tool
+and haven't yourself been dispatched as a subagent (delegation stays one level deep
+in this system) — dispatch one Sonnet subagent per module, each capped in output,
+then dedupe and synthesize. Otherwise process modules serially.
 
 ## Report shape
 
@@ -104,6 +114,14 @@ status quo before publishing. An empty section is itself a failure of the audit.
 - Don't force a hotspot narrative onto a repo that has none — for a weak-agent
   scaffold the real finding is often "no layering exists yet"; say that plainly.
 - Don't fabricate metrics — every number traces to a command you actually ran.
+
+## Siblings & when to hand off
+
+- A single diff, PR, or module (not the whole repo)? → **design-review**.
+- A pre-code design doc, spec, or plan? → **principal-design-reviewer** agent.
+- Found one module that needs redesigning? → **module-design**; coupling or
+  duplication across modules? → **designing-for-change**.
+- Judging a code review (rather than the code)? → **meta-code-review**.
 
 ## Red flags in your own audit
 

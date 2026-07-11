@@ -1,6 +1,6 @@
 ---
 name: meta-code-review
-description: Use when judging the quality of a code review that was itself produced by an AI agent or a person — verifying its findings against the actual code, checking for hallucinated or mis-cited findings, severity miscalibration, false positives, and real bugs it missed. Calibrates to who produced the code and the review (weak AI, strong AI, or junior developer). Reviews the review, not the code from scratch.
+description: Use when judging the quality of a code review that was itself produced by an AI agent or a person — verifying its findings against the actual code, checking for hallucinated or mis-cited findings, severity miscalibration, false positives, and real bugs it missed. Calibrates to who produced the code and the review (weak AI, strong AI, or junior developer). Applies the design-review rubric plus AI/junior-developer failure-mode research and Google's code-review standard.
 ---
 
 # Meta Code Review
