@@ -20,13 +20,15 @@ The canonical source list for this repo — `README.md` and
   the house/hardware case studies and "great designers" management chapters
   are out of scope for a coding agent.
 
-## The five skills (+ codebase-design)
+## The five skills
 
 Keyed to **what the agent is doing** (reliable triggering), not to which book an
 idea came from. See `README.md`'s "The five skills" table for the full
-skill-by-skill breakdown; `codebase-design` (pre-existing, not part of this
-repo) supplies the shared vocabulary, mirrored locally in
-`references/vocabulary.md`.
+skill-by-skill breakdown. The shared vocabulary and the deepening/design-it-twice
+procedures the skills build on are absorbed locally into `references/`
+(`vocabulary.md`, `deepening.md`, `design-it-twice.md`); the separate
+`codebase-design` skill, if installed, covers the same ground in more depth as
+optional enrichment.
 
 ## Shared references (the comprehensive corpus)
 
@@ -40,17 +42,20 @@ Every skill points to these; a reviewer runs on them directly:
 
 Comprehensive on *design quality*, but **defers, doesn't duplicate**:
 - Debugging, TDD, test-writing, git/CI → owned by the **superpowers** skills.
-- Deep-module vocabulary (module/interface/seam/depth/leverage/locality) →
-  mirrored locally in `references/vocabulary.md` so this set is self-sufficient
-  standalone, with the full treatment owned by **codebase-design**.
+- Deep-module vocabulary (module/interface/seam/depth/leverage/locality) and the
+  deepening/design-it-twice procedures → absorbed locally into
+  `references/vocabulary.md`, `references/deepening.md`, and
+  `references/design-it-twice.md` so this set is self-sufficient standalone;
+  **codebase-design**, if installed, is optional enrichment on top.
 
 ## Cross-linking (the safety net)
 
 Each SKILL.md (a) carries a working version of cross-cutting ideas so it's
 self-sufficient, (b) points to the shared references for depth, (c) names its
-siblings so an agent can hop doors, (d) points to `references/vocabulary.md`
-for the shared terms and to `codebase-design` for the full treatment.
-`codebase-design` links back to all five; entering through any one is fine.
+siblings so an agent can hop doors, (d) points to `references/vocabulary.md`,
+`references/deepening.md`, and `references/design-it-twice.md` for the shared
+terms and procedures — and to `codebase-design` as optional deeper reading if
+it's installed. Entering through any one skill is fine.
 
 ## Install
 

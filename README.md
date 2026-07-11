@@ -55,6 +55,8 @@ skills/
     principles.md           Positive principles, unified under "Easier To Change"
     review-checklist.md     7-dimension rubric — the reviewer-agent's rubric
     vocabulary.md           Module/interface/seam/depth/leverage/locality gloss
+    deepening.md            Dependency categories + seam/adapter procedure
+    design-it-twice.md      Parallel-interface search (serial + sub-agent forms)
     examples.md             One before→after worked example per skill
 
 agents/
@@ -81,7 +83,7 @@ Keyed to **what you're doing**, not to which book an idea came from — this is 
 | `design-review` | Evaluating existing code, a diff, or a PR | All three books — the reviewer-agent's hub |
 | `inline-authoring` | Writing code right now (names, comments) | APoSD Ch 12–18, PP naming |
 
-A separate, pre-existing skill called `codebase-design` supplies the shared vocabulary (module/interface/seam/depth/leverage/locality) these five build on. It isn't part of this repo, but each skill here links to it and to its siblings, so entering through any one of them works.
+The shared vocabulary (module/interface/seam/depth/leverage/locality) and the deepening/design-it-twice procedures these five build on live in `skills/references/` (`vocabulary.md`, `deepening.md`, `design-it-twice.md`), so the plugin is self-contained. A separate skill called `codebase-design` covers the same ground in more depth; if you have it installed the skills here link to it as optional enrichment, but nothing in this repo requires it.
 
 ## The agent team
 
@@ -98,7 +100,7 @@ See `docs/superpowers/specs/2026-07-05-principal-design-reviewer-design.md` for 
 
 ## Scope
 
-These skills judge **design quality** — they deliberately don't cover debugging, TDD mechanics, test-writing, or git/CI process (that's [superpowers](https://github.com/obra/superpowers)' territory), and they don't redefine vocabulary already owned by `codebase-design`.
+These skills judge **design quality** — they deliberately don't cover debugging, TDD mechanics, test-writing, or git/CI process (that's [superpowers](https://github.com/obra/superpowers)' territory). The deep-module vocabulary and procedures they build on are absorbed into `skills/references/`; `codebase-design`, if installed, is optional deeper reading on the same material.
 
 ## Sources
 

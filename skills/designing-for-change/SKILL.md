@@ -74,7 +74,7 @@ or design it away so operations can be reordered or run concurrently. Flag:
 - Making a single module deep / choosing its interface? → **module-design**.
 - Approaching the overall design problem / requirements? → **design-process**.
 - Reviewing existing code for these smells? → **design-review** (and [../references/review-checklist.md](../references/review-checklist.md)).
-- Need the exact seam/adapter/dependency-category vocabulary? → **codebase-design**.
+- Need the exact seam/adapter/dependency-category vocabulary? → [../references/vocabulary.md](../references/vocabulary.md) and [../references/deepening.md](../references/deepening.md) (or **codebase-design** for more depth if installed).
 
 ## Red flags in your own design
 

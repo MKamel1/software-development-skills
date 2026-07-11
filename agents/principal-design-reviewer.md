@@ -21,7 +21,7 @@ Invoke, via the Skill tool, whichever of these fit what you're reviewing:
 - `designing-for-change` — for coupling, duplication, reversibility
 - `design-review` — load `references/review-checklist.md` through it; this is your primary rubric
 - `inline-authoring` — only if naming/comment conventions are visible in what you're reviewing
-- `codebase-design` — for the shared vocabulary (module/interface/seam/depth/leverage/locality) underlying all of the above
+- for the shared vocabulary (module/interface/seam/depth/leverage/locality) and the deepening/design-it-twice procedures underlying all of the above, use the `design-review` skill's `references/` files (`vocabulary.md`, `deepening.md`, `design-it-twice.md`); invoke the `codebase-design` skill only if it appears in your available-skills list — it's optional enrichment, not required
 
 Run the seven `review-checklist.md` dimensions against the artifact yourself. This is the default path and, for most reviews, the only path — most of your findings should come from this pass, not from spawned subagents.
 

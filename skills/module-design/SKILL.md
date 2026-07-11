@@ -10,11 +10,12 @@ interface makes the common case trivial and hides complexity from every caller.
 This is the up-front-design side of *A Philosophy of Software Design*.
 
 Vocabulary (module / interface / seam / depth / leverage / locality):
-[../references/vocabulary.md](../references/vocabulary.md) — the
-`codebase-design` skill covers the same terms in more depth, and its
-DEEPENING.md / DESIGN-IT-TWICE.md cover dependency categories and the
-parallel-agent interface search. Don't redefine those here; use them.
-Principles and the error techniques are in
+[../references/vocabulary.md](../references/vocabulary.md). Dependency
+categories and the seam/adapter procedure live in
+[../references/deepening.md](../references/deepening.md); the parallel-interface
+search lives in [../references/design-it-twice.md](../references/design-it-twice.md).
+The `codebase-design` skill, if installed, covers the same ground in more depth —
+optional enrichment, not required. Principles and the error techniques are in
 [../references/principles.md](../references/principles.md). Worked example:
 [../references/examples.md](../references/examples.md#module-design).
 
@@ -56,7 +57,8 @@ The seam location is its own decision, separate from what sits behind it. Base
 it on **information hiding**, not execution order — boundaries drawn around the
 *sequence* of operations (read → process → write) are *Temporal Decomposition*.
 For seam + dependency handling (in-process, local-substitutable, ports &
-adapters, mock), use `codebase-design`'s DEEPENING.md. Rule of thumb: **one
+adapters, mock), see [../references/deepening.md](../references/deepening.md)
+(and `codebase-design` for more depth if it's installed). Rule of thumb: **one
 adapter is a hypothetical seam; two is a real one** — don't add a port for a
 single implementation.
 
@@ -78,7 +80,8 @@ Your first interface is rarely the best. Sketch **two or more radically
 different** interfaces (e.g. minimal vs flexible vs common-case-optimized),
 then compare on depth, locality, and seam placement, and pick or hybridize. For
 a chosen deepening candidate this is worth spinning up parallel sub-agents —
-see `codebase-design`'s DESIGN-IT-TWICE.md.
+see [../references/design-it-twice.md](../references/design-it-twice.md) (and
+`codebase-design` for more depth if it's installed).
 
 ## Siblings & when to hand off
 
@@ -86,8 +89,10 @@ see `codebase-design`'s DESIGN-IT-TWICE.md.
 - The concern is coupling, duplication, or reversibility across modules? → **designing-for-change**.
 - Code already exists and you're judging it? → **design-review**.
 - Down to naming, comments, and local readability? → **inline-authoring**.
-- Need the exact seam/adapter/dependency-category vocabulary and the
-  parallel-agent design pattern? → **codebase-design**.
+- Need the seam/adapter/dependency-category procedure or the parallel-agent
+  design pattern? → [../references/deepening.md](../references/deepening.md) and
+  [../references/design-it-twice.md](../references/design-it-twice.md) (with
+  **codebase-design** for the fuller treatment if installed).
 
 ## Red flags in your own design
 
