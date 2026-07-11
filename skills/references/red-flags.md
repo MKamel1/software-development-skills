@@ -1,9 +1,11 @@
 # Red Flags Catalog
 
 Symptoms that a piece of code is probably more complex than it needs to be.
-From *A Philosophy of Software Design* (APoSD), distilled. When you see one,
-**stop and look for an alternate design that removes it** — don't rationalize it
-away. Each flag lists the fix and which skill acts on it.
+Distilled from all three books — *A Philosophy of Software Design* (APoSD) for
+the first table, *The Pragmatic Programmer* (PP) and *The Design of Design*
+(DoD) for the second. When you see one, **stop and look for an alternate design
+that removes it** — don't rationalize it away. Each flag lists the fix and which
+skill acts on it.
 
 Vocabulary (module / interface / seam / depth / leverage / locality):
 [vocabulary.md](vocabulary.md) (and the `codebase-design` skill for the full

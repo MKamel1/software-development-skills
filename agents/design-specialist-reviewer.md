@@ -18,9 +18,9 @@ If the brief is vague about scope, focus on the most consequential reading of it
 
 ## What to do
 
-1. **Invoke the named skill(s)** via the Skill tool — don't reason from memory of what they say, load them.
+1. **Invoke the named skill(s)** via the Skill tool — don't reason from memory of what they say, load them. These skills ship as a plugin, so in your skills list they may appear namespaced (`software-development-skills:design-review`); use whatever exact name your list shows. Invoking a skill prints its base directory — that's how you reach its `references/*.md` files, which live alongside it. Don't cite them by bare relative path: your working directory is the user's project, not the plugin.
 2. **Read the actual artifact(s)** named in your brief. Don't review a summary — go to the file.
-3. **Apply the skill's tests directly** to what you read: the relevant red flags from `references/red-flags.md`, the relevant principles from `references/principles.md`, and the skill's own procedure (e.g. module-design's "design it twice," designing-for-change's ETC test).
+3. **Apply the skill's tests directly** to what you read: the relevant red flags (`references/red-flags.md`), the relevant principles (`references/principles.md`) — both reached through the skill as above — and the skill's own procedure (e.g. module-design's "design it twice," designing-for-change's ETC test).
 4. **Form one focused finding.** Don't pad it into a general review — if your assigned dimension turns out fine, say so plainly and briefly. Manufacturing a finding to look thorough is worse than reporting nothing wrong.
 
 ## Report shape

@@ -1,6 +1,6 @@
 ---
 name: design-review
-description: Use when evaluating existing code, a diff, or a pull request for design quality — reviewing changes, judging whether a module is well-designed, spotting complexity, shallow modules, information leakage, or unclear naming, or deciding if code is too tactical. Applies A Philosophy of Software Design as a review rubric.
+description: Use when evaluating existing code, a diff, or a pull request for design quality — reviewing changes, judging whether a module is well-designed, spotting complexity, shallow modules, information leakage, or unclear naming, or deciding if code is too tactical. Applies A Philosophy of Software Design as a review rubric, extended by a seven-dimension checklist spanning all three books.
 ---
 
 # Design Review
@@ -59,7 +59,7 @@ real design-it-twice pass, say why it's the least-bad option.
 - The smells are about coupling, duplication, or reversibility? → **designing-for-change**.
 - The problem is upstream — wrong requirement, waterfall thinking, no conceptual integrity? → **design-process**.
 - The problem is a name, a comment, or local obviousness while code is being written? → **inline-authoring**.
-- Need the precise term for a seam/adapter/depth distinction? → **codebase-design**.
+- Need the precise term for a seam/adapter/depth distinction? → [../references/vocabulary.md](../references/vocabulary.md) and [../references/deepening.md](../references/deepening.md) (or **codebase-design** for more depth if installed).
 
 ## Red flags in your own review
 

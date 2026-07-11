@@ -67,7 +67,7 @@ documented behaviour, and prove assumptions before building on them.
 
 - The problem is bigger than a name/comment — the *interface* is wrong? → **module-design**.
 - Reviewing someone else's finished change against these standards? → **design-review**.
-- Need the exact term for a seam/adapter/depth idea? → **codebase-design**.
+- Need the exact term for a seam/adapter/depth idea? → [../references/vocabulary.md](../references/vocabulary.md) (or **codebase-design** for more depth if installed).
 
 ## Red flags in your own writing
 

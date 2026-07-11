@@ -51,7 +51,7 @@ complexity?).
 1. **Complexity is incremental** — sweat the small stuff; every shortcut counts.
 2. **Working code isn't enough** — a clean, changeable design is the real deliverable.
 3. **Make continual small investments** to improve design (~10–20% overhead), not big-bang cleanups.
-4. **Modules should be deep** — a lot of capability behind a small interface (see `codebase-design`).
+4. **Modules should be deep** — a lot of capability behind a small interface (see [deepening.md](deepening.md)).
 5. **Design interfaces to make the common case simple**; push rare cases out of the way.
 6. **A simple interface matters more than a simple implementation** — accept internal complexity to spare every caller.
 7. **General-purpose modules are deeper** — "somewhat general" interfaces are usually simpler *and* more reusable than special-purpose ones.

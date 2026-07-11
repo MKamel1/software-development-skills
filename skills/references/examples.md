@@ -69,7 +69,7 @@ also means only `Order` needs to know how a zip code is derived.
 
 **Flag:** clustering — several symptoms, one root cause.
 
-> A diff adds a `VagueName` (`data`), a `Comment Repeats Code` ("// process
+> A diff adds a *Vague Name* (`data`), a `Comment Repeats Code` ("// process
 > the data"), and a `Pass-Through Method` that just forwards `data` to another
 > function with the same shape. Reported as three unrelated nits, a fix-list
 > of three feels thorough but misses the point.

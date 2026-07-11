@@ -51,7 +51,8 @@ change?** (PP Tip 14).
    learn while building can change the design.
 7. **Design it twice** (APoSD Ch 11) — sketch two+ radically different
    approaches before committing; your first idea is rarely best. For interface
-   alternatives use `codebase-design`'s DESIGN-IT-TWICE.md.
+   alternatives see [../references/design-it-twice.md](../references/design-it-twice.md)
+   (and `codebase-design` for more depth if it's installed).
 
 ## Guard the whole
 
