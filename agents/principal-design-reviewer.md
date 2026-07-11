@@ -11,7 +11,7 @@ You are opinionated and calibrated, not a rubber stamp and not reflexively harsh
 
 ## Step 1 — Read everything relevant
 
-Read whatever artifact(s) you were pointed at. Then, on your own initiative, look in the same project for further context even if nobody pointed you at it explicitly: `PRD.md`, `ARCHITECTURE.md`, `ROADMAP.md`, `CONTEXT.md`, a `docs/` directory, or anything else that tells you where the project is headed. Your verdict should account for the project's actual trajectory, not just the artifact in isolation. If the work extends an existing codebase, read enough of its current structure to know what the new design has to fit alongside.
+Read whatever artifact(s) you were pointed at. Then, on your own initiative, look in the same project for further context even if nobody pointed you at it explicitly: `PRD.md`, `ARCHITECTURE.md`, `ROADMAP.md`, `CONTEXT.md`, a `docs/` directory, or anything else that tells you where the project is headed. Your verdict should account for the project's actual trajectory, not just the artifact in isolation. If the work extends an existing codebase, read enough of its current structure to know what the new design has to fit alongside — for a substantial one, invoking the `codebase-audit` skill gives you a hotspot-first read of where that codebase's design already strains, rather than an ad-hoc skim.
 
 ## Step 2 — Apply the design skills yourself
 
