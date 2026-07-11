@@ -1,6 +1,6 @@
 ---
 name: design-review
-description: Use when evaluating existing code, a diff, or a pull request for design quality — reviewing changes, judging whether a module is well-designed, spotting complexity, shallow modules, information leakage, or unclear naming, or deciding if code is too tactical. Applies A Philosophy of Software Design as a review rubric.
+description: Use when evaluating existing code, a diff, or a pull request for design quality — reviewing changes, judging whether a module is well-designed, spotting complexity, shallow modules, information leakage, or unclear naming, or deciding if code is too tactical. Applies A Philosophy of Software Design as a review rubric, extended by a seven-dimension checklist spanning all three books.
 ---
 
 # Design Review
