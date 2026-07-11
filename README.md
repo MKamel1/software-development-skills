@@ -105,3 +105,7 @@ These skills judge **design quality** — they deliberately don't cover debuggin
 ## Sources
 
 See `skills/DESIGN.md`'s Sources section for the full citations (edition, publisher, and scope notes) — this repo distills Ousterhout's *A Philosophy of Software Design*, Andrew Hunt & David Thomas's *The Pragmatic Programmer*, and Fred Brooks's *The Design of Design*.
+
+## License
+
+Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — see [`LICENSE`](LICENSE). Covers this repository's own content only; the three books' text is not reproduced (only paraphrased with citations), and they remain under their respective publishers' copyright.
