@@ -34,7 +34,7 @@ optional enrichment.
 
 Every skill points to these; a reviewer runs on them directly:
 
-- `references/red-flags.md` — symptom catalog across all three books (27 flags).
+- `references/red-flags.md` — symptom catalog across all three books.
 - `references/principles.md` — positive principles across all three books, unified under the "Easier To Change" master lens.
 - `references/review-checklist.md` — **the reviewer-agent rubric**: seven dimensions spanning all three books, run top to bottom against another agent's output. Entered via `design-review`.
 

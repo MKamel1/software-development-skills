@@ -9,8 +9,7 @@
     {
       "name": "software-development-skills",
       "source": "./",
-      "description": "Five design skills (design-process, module-design, designing-for-change, design-review, inline-authoring) plus a principal-design-reviewer agent team, distilled from A Philosophy of Software Design, The Pragmatic Programmer, and The Design of Design.",
-      "version": "1.0.0"
+      "description": "Five design skills (design-process, module-design, designing-for-change, design-review, inline-authoring) plus a principal-design-reviewer agent team, distilled from A Philosophy of Software Design, The Pragmatic Programmer, and The Design of Design."
     }
   ]
 }

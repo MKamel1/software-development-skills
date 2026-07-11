@@ -13,7 +13,7 @@ This repo is a [Claude Code plugin](https://claude.com/claude-code) (`.claude-pl
 /plugin install software-development-skills
 ```
 
-Restart Claude Code (or reopen `/plugin`) to pick up the new skills and agents. Check `/plugin list` — you should see `software-development-skills` with 5 skills and 4 agents. Update it later with `/plugin update software-development-skills`, or a marketplace refresh; either picks up any change to this repo automatically, with no separate "re-copy" step. Your `~/.claude/CLAUDE.md` can still route agents to these skills by name — that routing is plugin-agnostic.
+Restart Claude Code (or reopen `/plugin`) to pick up the new skills and agents. Check `/plugin list` — you should see `software-development-skills` with its skills and agents listed. Update it later with `/plugin update software-development-skills`, or a marketplace refresh; either picks up any change to this repo automatically, with no separate "re-copy" step. Your `~/.claude/CLAUDE.md` can still route agents to these skills by name — that routing is plugin-agnostic.
 
 **Developing locally:** to test edits before pushing, point the marketplace at your working copy instead of GitHub:
 
@@ -51,7 +51,7 @@ skills/
   design-review/            Evaluating existing code/diffs/PRs for design quality
   inline-authoring/         Naming, comments, consistency while writing code
   references/
-    red-flags.md            27 design-smell symptoms spanning all 3 books
+    red-flags.md            Design-smell symptom catalog spanning all 3 books
     principles.md           Positive principles, unified under "Easier To Change"
     review-checklist.md     7-dimension rubric — the reviewer-agent's rubric
     vocabulary.md           Module/interface/seam/depth/leverage/locality gloss
